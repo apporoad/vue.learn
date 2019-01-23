@@ -1,0 +1,30 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<body >
+	<div id = 'app'>
+			<ul>
+					<li v-for="t in ts">
+					 hello {{t.hello}}
+					</li>
+				</ul>
+
+
+	</div>
+
+
+</body>
+
+
+<script>
+	var app = new Vue({
+		el:'#app',
+		data:{
+			ts :[
+				{ hello :"good day"},
+				{ hello : " good girl"}
+			]
+		}
+	})
+
+</script>
