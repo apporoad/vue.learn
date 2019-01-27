@@ -1,0 +1,40 @@
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<body>
+
+	<div id='c'>
+		<g-c v-for='h in hi' :hello='h'></g-c>
+		<p-c v-for='h in hi' :hello='h'></p-c>
+	</div>
+
+</body>
+
+
+<script>
+
+	// here about component 
+
+	Vue.component('g-c',{
+		props :['hello'],
+		template:"<h3>{{hello}}	</h3>"
+	})
+
+	var pC = {
+		props :['hello'],
+		template : '<h4>{{hello}}</h4>'
+	}
+	var app = new Vue({
+		el:'#c',
+		components:{
+			'p-c' : pC
+		},
+		data:{
+			hi: ["hello gooo day","ni hao",'LiSA']
+		}
+	})
+
+
+</script>

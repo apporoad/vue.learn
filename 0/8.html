@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<body>
+	<div id="app">
+		<todo  :message = "msg" ></todo>
+	  </div>
+
+</body>
+
+
+<script>
+
+	Vue.component('todo',{
+		props : ["message"],
+		template: "<li>hello good day {{message}}</li>"
+	})
+	var app = new Vue({
+		el:'#app',
+		data:{
+			msg : 'aabcc'
+		}
+	})
+
+
+</script>
