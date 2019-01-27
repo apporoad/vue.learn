@@ -1,0 +1,52 @@
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<body>
+
+	<div id='c'>
+		<p-c static="hello"  :str='str' :num='num' :bool="bool" :arr="arr" :obj="obj"></p-c>
+	</div>
+
+</body>
+
+
+<script>
+
+	var pC = {
+		props :{
+			str : String,
+			num : Number,
+			bool :Boolean,
+			arr : Array,
+			obj : Object
+		},
+		computed : {
+			msg : function(){
+				return this.str + ' ' + this.num + ' ' + this.bool +' ' + this.arr
+				 +' ' + this.obj.name
+			}
+		},
+		template : '<h4>{{msg}} </h4>'
+	}
+	var app = new Vue({
+		el:'#c',
+		components:{
+			'p-c' : pC
+		},
+		data:{
+			str : "LiSA",
+			num : '1154', // here warning
+			bool :true,
+			arr : ['hello','good','day'],
+			obj : {
+				name : "aoer"
+			}
+		}
+	})
+
+	// todo webpack + auto register
+
+
+</script>
